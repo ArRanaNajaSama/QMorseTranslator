@@ -23,6 +23,8 @@ private slots:
 
     void on_saveInitTextBtn_clicked();
 
+    void on_decodeBtn_clicked();
+
 private:
     Ui::MainWindow *ui;
 };

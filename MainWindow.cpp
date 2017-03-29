@@ -90,6 +90,19 @@ void MainWindow::on_codeBtn_clicked()
     ui->resultTextEdit->setPlainText(res); // display result
 }
 
+void MainWindow::on_decodeBtn_clicked()
+{
+    QString init = ui->yourTextTextEdit->toPlainText();
+    // check if variable is empty -> display error message
+    if (init.isEmpty())
+    {
+        QMessageBox::information(this, tr("Error!"),tr("Text field is empty!"));
+        return;
+    }
+    QString res = morseToEng(init); // convert english text in Morse
+    ui->resultTextEdit->setPlainText(res); // display result
+}
+
 void MainWindow::on_saveResBtn_clicked()
 {
     QString fileName = QFileDialog::getSaveFileName(this,
@@ -223,9 +236,22 @@ QString morseToEng (QString str)
     QMap <QString, QString>::const_iterator it; // iterate over a QMap
     QString result; // to keep out result
 
-    //
+    //split words
+    QStringList words = str.split(' ');
+    for (int i = 0; i < words.size(); i++)
+    {
+        it = toEnglish.find(words[i]);
+        if (it == toEnglish.end())
+        {
+            result += ' ';
 
+        } else {
+            result += it.value();
+        }
+    }
     return result;
 }
+
+
 
 
