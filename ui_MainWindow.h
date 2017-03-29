@@ -18,6 +18,7 @@
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QSplitter>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QTextEdit>
 #include <QtWidgets/QToolBar>
@@ -31,13 +32,15 @@ public:
     QWidget *centralWidget;
     QLabel *yourTextLabel;
     QTextEdit *yourTextTextEdit;
-    QPushButton *loadBtn;
-    QPushButton *codeBtn;
     QTextEdit *resultTextEdit;
     QPushButton *saveResBtn;
-    QPushButton *saveInitTextBtn;
-    QPushButton *decodeBtn;
     QLabel *label;
+    QSplitter *splitter;
+    QPushButton *codeBtn;
+    QPushButton *decodeBtn;
+    QSplitter *splitter_2;
+    QPushButton *loadBtn;
+    QPushButton *saveInitTextBtn;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -55,28 +58,36 @@ public:
         yourTextTextEdit = new QTextEdit(centralWidget);
         yourTextTextEdit->setObjectName(QStringLiteral("yourTextTextEdit"));
         yourTextTextEdit->setGeometry(QRect(20, 50, 231, 331));
-        loadBtn = new QPushButton(centralWidget);
-        loadBtn->setObjectName(QStringLiteral("loadBtn"));
-        loadBtn->setGeometry(QRect(20, 400, 93, 28));
-        codeBtn = new QPushButton(centralWidget);
-        codeBtn->setObjectName(QStringLiteral("codeBtn"));
-        codeBtn->setGeometry(QRect(280, 70, 90, 28));
         resultTextEdit = new QTextEdit(centralWidget);
         resultTextEdit->setObjectName(QStringLiteral("resultTextEdit"));
         resultTextEdit->setGeometry(QRect(390, 50, 231, 331));
         resultTextEdit->setReadOnly(true);
         saveResBtn = new QPushButton(centralWidget);
         saveResBtn->setObjectName(QStringLiteral("saveResBtn"));
-        saveResBtn->setGeometry(QRect(530, 400, 93, 28));
-        saveInitTextBtn = new QPushButton(centralWidget);
-        saveInitTextBtn->setObjectName(QStringLiteral("saveInitTextBtn"));
-        saveInitTextBtn->setGeometry(QRect(140, 400, 93, 28));
-        decodeBtn = new QPushButton(centralWidget);
-        decodeBtn->setObjectName(QStringLiteral("decodeBtn"));
-        decodeBtn->setGeometry(QRect(280, 110, 90, 28));
+        saveResBtn->setGeometry(QRect(520, 390, 93, 28));
         label = new QLabel(centralWidget);
         label->setObjectName(QStringLiteral("label"));
         label->setGeometry(QRect(400, 20, 55, 16));
+        splitter = new QSplitter(centralWidget);
+        splitter->setObjectName(QStringLiteral("splitter"));
+        splitter->setGeometry(QRect(270, 60, 93, 56));
+        splitter->setOrientation(Qt::Vertical);
+        codeBtn = new QPushButton(splitter);
+        codeBtn->setObjectName(QStringLiteral("codeBtn"));
+        splitter->addWidget(codeBtn);
+        decodeBtn = new QPushButton(splitter);
+        decodeBtn->setObjectName(QStringLiteral("decodeBtn"));
+        splitter->addWidget(decodeBtn);
+        splitter_2 = new QSplitter(centralWidget);
+        splitter_2->setObjectName(QStringLiteral("splitter_2"));
+        splitter_2->setGeometry(QRect(40, 390, 186, 28));
+        splitter_2->setOrientation(Qt::Horizontal);
+        loadBtn = new QPushButton(splitter_2);
+        loadBtn->setObjectName(QStringLiteral("loadBtn"));
+        splitter_2->addWidget(loadBtn);
+        saveInitTextBtn = new QPushButton(splitter_2);
+        saveInitTextBtn->setObjectName(QStringLiteral("saveInitTextBtn"));
+        splitter_2->addWidget(saveInitTextBtn);
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
@@ -98,12 +109,12 @@ public:
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", 0));
         yourTextLabel->setText(QApplication::translate("MainWindow", "Your text", 0));
-        loadBtn->setText(QApplication::translate("MainWindow", "Load", 0));
-        codeBtn->setText(QApplication::translate("MainWindow", "Code", 0));
         saveResBtn->setText(QApplication::translate("MainWindow", "Save As", 0));
-        saveInitTextBtn->setText(QApplication::translate("MainWindow", "Save As", 0));
-        decodeBtn->setText(QApplication::translate("MainWindow", "Decode", 0));
         label->setText(QApplication::translate("MainWindow", "Result", 0));
+        codeBtn->setText(QApplication::translate("MainWindow", "Code", 0));
+        decodeBtn->setText(QApplication::translate("MainWindow", "Decode", 0));
+        loadBtn->setText(QApplication::translate("MainWindow", "Load", 0));
+        saveInitTextBtn->setText(QApplication::translate("MainWindow", "Save As", 0));
     } // retranslateUi
 
 };

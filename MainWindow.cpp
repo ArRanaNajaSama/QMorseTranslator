@@ -21,9 +21,9 @@ void MainWindow::on_loadBtn_clicked()
 
     QString fileName = QFileDialog::getSaveFileName(this,tr("Open file"), "",tr("text file (*.txt)"));
 
-    // Next, we attempt to open the file in WriteOnly mode.
-    // If this is unsuccessful, we display a QMessageBox to inform the user.
-    if (fileName.isEmpty())
+    // attempt to open the file in WriteOnly mode.
+    // If this is unsuccessful, display a box to inform the user.
+    if (fileName.isEmpty()) // check if file is empty -> return
     {
         return;
     } else {
@@ -31,8 +31,7 @@ void MainWindow::on_loadBtn_clicked()
         QFile file(fileName);
         if (!file.open(QIODevice::ReadOnly))
         {
-            QMessageBox::information(this, tr("Unable to open file"),
-                                     file.errorString());
+            QMessageBox::information(this, tr("Unable to open file"), file.errorString());
             return;
         }
 
@@ -47,12 +46,7 @@ void MainWindow::on_loadBtn_clicked()
 
 void MainWindow::on_saveInitTextBtn_clicked()
 {
-    QString fileName = QFileDialog::getSaveFileName(this,
-                                                    tr("Save Result"), "",
-                                                    tr("text file (*.txt)"));
-
-    // Next, we attempt to open the file in WriteOnly mode.
-    // If this is unsuccessful, we display a QMessageBox to inform the user.
+    QString fileName = QFileDialog::getSaveFileName(this,tr("Save Result"), "", tr("text file (*.txt)"));
     if (fileName.isEmpty())
     {
         return;
@@ -99,9 +93,6 @@ void MainWindow::on_decodeBtn_clicked()
 void MainWindow::on_saveResBtn_clicked()
 {
     QString fileName = QFileDialog::getSaveFileName(this, tr("Save Result"), "", tr("text file (*.txt)"));
-
-    // Next, we attempt to open the file in WriteOnly mode.
-    // If this is unsuccessful, we display a QMessageBox to inform the user.
     if (fileName.isEmpty())
         return;
     else {

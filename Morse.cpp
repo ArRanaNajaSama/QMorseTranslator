@@ -2,10 +2,7 @@
 
 #include <QMap>
 
-Morse::Morse()
-{
-
-}
+Morse::Morse(){}
 
 QString Morse::engToMorse(QString str)
 {
@@ -114,19 +111,19 @@ QString Morse::morseToEng(QString str)
     toEnglish["-----"] = "0";
 
     QMap <QString, QString>::const_iterator it; // iterate over a QMap
+
     QString result; // to keep out result
 
-    //split words
-    QStringList words = str.split(' ');
+    QStringList words = str.split(' '); //split string
     for (int i = 0; i < words.size(); i++)
     {
         it = toEnglish.find(words[i]);
-        if (it == toEnglish.end())
+        if (it == toEnglish.end()) // if no match was found -> space
         {
             result += ' ';
 
         } else {
-            result += it.value();
+            result += it.value(); // add letter to string
         }
     }
     return result;
