@@ -32,16 +32,16 @@ static const qt_meta_stringdata_MainWindow_t qt_meta_stringdata_MainWindow = {
 QT_MOC_LITERAL(0, 0, 10), // "MainWindow"
 QT_MOC_LITERAL(1, 11, 18), // "on_loadBtn_clicked"
 QT_MOC_LITERAL(2, 30, 0), // ""
-QT_MOC_LITERAL(3, 31, 18), // "on_codeBtn_clicked"
-QT_MOC_LITERAL(4, 50, 21), // "on_saveResBtn_clicked"
-QT_MOC_LITERAL(5, 72, 26), // "on_saveInitTextBtn_clicked"
-QT_MOC_LITERAL(6, 99, 20) // "on_decodeBtn_clicked"
+QT_MOC_LITERAL(3, 31, 26), // "on_saveInitTextBtn_clicked"
+QT_MOC_LITERAL(4, 58, 18), // "on_codeBtn_clicked"
+QT_MOC_LITERAL(5, 77, 20), // "on_decodeBtn_clicked"
+QT_MOC_LITERAL(6, 98, 21) // "on_saveResBtn_clicked"
 
     },
     "MainWindow\0on_loadBtn_clicked\0\0"
-    "on_codeBtn_clicked\0on_saveResBtn_clicked\0"
     "on_saveInitTextBtn_clicked\0"
-    "on_decodeBtn_clicked"
+    "on_codeBtn_clicked\0on_decodeBtn_clicked\0"
+    "on_saveResBtn_clicked"
 };
 #undef QT_MOC_LITERAL
 
@@ -82,10 +82,10 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         Q_UNUSED(_t)
         switch (_id) {
         case 0: _t->on_loadBtn_clicked(); break;
-        case 1: _t->on_codeBtn_clicked(); break;
-        case 2: _t->on_saveResBtn_clicked(); break;
-        case 3: _t->on_saveInitTextBtn_clicked(); break;
-        case 4: _t->on_decodeBtn_clicked(); break;
+        case 1: _t->on_saveInitTextBtn_clicked(); break;
+        case 2: _t->on_codeBtn_clicked(); break;
+        case 3: _t->on_decodeBtn_clicked(); break;
+        case 4: _t->on_saveResBtn_clicked(); break;
         default: ;
         }
     }

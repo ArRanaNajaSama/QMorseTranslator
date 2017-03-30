@@ -18,13 +18,13 @@ public:
 
 private slots:
     void on_loadBtn_clicked();
-    void on_codeBtn_clicked();
-    void on_saveResBtn_clicked();
     void on_saveInitTextBtn_clicked();
+    void on_codeBtn_clicked();
     void on_decodeBtn_clicked();
+    void on_saveResBtn_clicked();
 
 private:
     Ui::MainWindow *ui;
-    Morse m;
+    Morse *m;
 
 };
