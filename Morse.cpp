@@ -1,5 +1,4 @@
 #include <QMap>
-
 #include "Morse.h"
 
 Morse::Morse(){}
@@ -45,24 +44,22 @@ QString Morse::engToMorse(QString str)
     toMorse["0"] = "-----";
 
     QMap <QString, QString>::const_iterator it;
-    str = str.toUpper(); // make sure that all char are uppercase.
+    str = str.toUpper(); // make all char uppercase.
     QString result; // will contain final result
 
     for (int i = 0; i < str.size(); i++)
     {
-        if(str.at(i) != ' ') // if current char is not space
+        if (str.at(i) == ' ')
         {
-
-            it = toMorse.find(str.at(i)); // we will seek through our map for it
-            if (str.at(i) != it.key()) // if char is not in map - just skip
+            result += '  ';
+        } else {
+            it = toMorse.find(str.at(i));
+            if (it == toMorse.end()) // if no match was found -> space
             {
                 continue;
             } else {
-                result += it.value() + " "; // if char is found write it's value in result + space;
+                result += it.value() + ' '; // add letter to string
             }
-        } else if (str.at(i) == ' ') // if char is space
-        {
-            result += " "; // add extra space to line;
         }
     }
     return result;
