@@ -56,6 +56,8 @@ QString Morse::engToMorse(QString str)
         if (str.at(i) == ' ')
         {
             result += "  ";
+        } else if (str.at(i) == '\n'){
+            result += "\n";
         } else {
             it = toMorse.find(str.at(i));
             if (it == toMorse.end()) // if no match was found -> space
@@ -111,7 +113,7 @@ QString Morse::morseToEng(QString str)
 
     QMap <QString, QString>::const_iterator it; // iterate over a QMap
     QString result; // to keep out result
-    QStringList words = str.split(' '); //split string
+    QStringList words = str.split(QRegExp("[\\s\n]")); //split string by new lines
     for (int i = 0; i < words.size(); i++)
     {
         it = toEnglish.find(words[i]);
@@ -123,5 +125,6 @@ QString Morse::morseToEng(QString str)
             result += it.value(); // add letter to string
         }
     }
+
     return result;
 }
