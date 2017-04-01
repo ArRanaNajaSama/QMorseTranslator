@@ -71,7 +71,7 @@ void MainWindow::on_codeBtn_clicked()
     // check if variable is empty -> display error message
     if (init.isEmpty())
     {
-        QMessageBox::information(this, tr("Error!"),tr("Text field is empty!"));
+        QMessageBox::information(this, tr("Error!"),tr("Your text field is empty!"));
         return;
     }
 
@@ -80,6 +80,8 @@ void MainWindow::on_codeBtn_clicked()
 
     // display result
     ui->resultTextEdit->setPlainText(res);
+
+
 }
 
 void MainWindow::on_decodeBtn_clicked()
@@ -90,7 +92,7 @@ void MainWindow::on_decodeBtn_clicked()
     // check if variable is empty -> display error message
     if (init.isEmpty())
     {
-        QMessageBox::information(this, tr("Error!"),tr("Text field is empty!"));
+        QMessageBox::information(this, tr("Error!"),tr("Your text field is empty!"));
         return;
     }
 
@@ -121,5 +123,8 @@ void MainWindow::on_saveResBtn_clicked()
 }
 
 
-
-
+void MainWindow::on_clearAllBtn_clicked()
+{
+    ui->yourTextTextEdit->clear();
+    ui->resultTextEdit->clear();
+}

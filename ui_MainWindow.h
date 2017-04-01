@@ -41,6 +41,7 @@ public:
     QSplitter *splitter_2;
     QPushButton *loadBtn;
     QPushButton *saveInitTextBtn;
+    QPushButton *clearAllBtn;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -88,6 +89,9 @@ public:
         saveInitTextBtn = new QPushButton(splitter_2);
         saveInitTextBtn->setObjectName(QStringLiteral("saveInitTextBtn"));
         splitter_2->addWidget(saveInitTextBtn);
+        clearAllBtn = new QPushButton(centralWidget);
+        clearAllBtn->setObjectName(QStringLiteral("clearAllBtn"));
+        clearAllBtn->setGeometry(QRect(270, 120, 93, 28));
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
@@ -115,6 +119,7 @@ public:
         decodeBtn->setText(QApplication::translate("MainWindow", "Decode", 0));
         loadBtn->setText(QApplication::translate("MainWindow", "Load", 0));
         saveInitTextBtn->setText(QApplication::translate("MainWindow", "Save As", 0));
+        clearAllBtn->setText(QApplication::translate("MainWindow", "Clear All", 0));
     } // retranslateUi
 
 };

@@ -23,6 +23,8 @@ private slots:
     void on_decodeBtn_clicked();
     void on_saveResBtn_clicked();
 
+    void on_clearAllBtn_clicked();
+
 private:
     Ui::MainWindow *ui;
     Morse *m;
