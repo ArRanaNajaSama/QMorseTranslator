@@ -20,7 +20,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_loadBtn_clicked()
 {
-    QString fileName = QFileDialog::getSaveFileName(this,tr("Open file"), "",tr("text file (*.txt)"));
+    QString fileName = QFileDialog::getOpenFileName(this,tr("Open file"), "",tr("text file (*.txt)"));
 
     // attempt to open the file in WriteOnly mode.
     // If this is unsuccessful, display a box to inform the user.
