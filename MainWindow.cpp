@@ -64,6 +64,9 @@ void MainWindow::on_saveInitTextBtn_clicked()
 
 void MainWindow::on_codeBtn_clicked()
 {
+    //clean result window prior coding
+    ui->resultTextEdit->clear();
+
     //get text from text edit field
     QString init = ui->yourTextTextEdit->toPlainText();
 
@@ -85,6 +88,9 @@ void MainWindow::on_codeBtn_clicked()
 
 void MainWindow::on_decodeBtn_clicked()
 {
+    //clean result window prior decoding
+    ui->resultTextEdit->clear();
+
     //get text from text edit field
     QString init = ui->yourTextTextEdit->toPlainText();
 

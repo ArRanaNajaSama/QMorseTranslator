@@ -22,9 +22,7 @@ private slots:
     void on_codeBtn_clicked();
     void on_decodeBtn_clicked();
     void on_saveResBtn_clicked();
-
     void on_clearAllBtn_clicked();
-
     void on_yourTextTextEdit_textChanged();
 
 private:

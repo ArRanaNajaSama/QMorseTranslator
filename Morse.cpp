@@ -7,6 +7,8 @@ Morse::~Morse(){}
 
 QString Morse::engToMorse(QString str)
 {
+    str = str.toUpper(); // make all char uppercase.
+
     QMap <QString, QString> toMorse; // create map to contain keys / values
     toMorse["A"] = ".-";
     toMorse["B"] = "-...";
@@ -46,7 +48,7 @@ QString Morse::engToMorse(QString str)
     toMorse["0"] = "-----";
 
     QMap <QString, QString>::const_iterator it;
-    str = str.toUpper(); // make all char uppercase.
+
     QString result; // will contain final result
 
     for (int i = 0; i < str.size(); i++)

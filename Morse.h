@@ -11,5 +11,4 @@ public:
     ~Morse();
     QString engToMorse(QString str); // method to translate english into Morse;
     QString morseToEng(QString str); // method to translate morse into English
-
 };
