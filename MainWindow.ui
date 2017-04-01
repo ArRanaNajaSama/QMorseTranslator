@@ -36,6 +36,9 @@
       <height>331</height>
      </rect>
     </property>
+    <property name="overwriteMode">
+     <bool>false</bool>
+    </property>
    </widget>
    <widget class="QTextEdit" name="resultTextEdit">
     <property name="geometry">

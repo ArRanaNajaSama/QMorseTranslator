@@ -25,6 +25,8 @@ private slots:
 
     void on_clearAllBtn_clicked();
 
+    void on_yourTextTextEdit_textChanged();
+
 private:
     Ui::MainWindow *ui;
     Morse *m;

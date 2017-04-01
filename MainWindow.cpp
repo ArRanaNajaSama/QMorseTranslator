@@ -62,7 +62,6 @@ void MainWindow::on_saveInitTextBtn_clicked()
     }
 }
 
-
 void MainWindow::on_codeBtn_clicked()
 {
     //get text from text edit field
@@ -126,5 +125,10 @@ void MainWindow::on_saveResBtn_clicked()
 void MainWindow::on_clearAllBtn_clicked()
 {
     ui->yourTextTextEdit->clear();
+    ui->resultTextEdit->clear();
+}
+
+void MainWindow::on_yourTextTextEdit_textChanged()
+{
     ui->resultTextEdit->clear();
 }
