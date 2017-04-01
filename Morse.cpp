@@ -3,6 +3,8 @@
 
 Morse::Morse(){}
 
+Morse::~Morse(){}
+
 QString Morse::engToMorse(QString str)
 {
     QMap <QString, QString> toMorse; // create map to contain keys / values
@@ -51,14 +53,14 @@ QString Morse::engToMorse(QString str)
     {
         if (str.at(i) == ' ')
         {
-            result += '  ';
+            result += "  ";
         } else {
             it = toMorse.find(str.at(i));
             if (it == toMorse.end()) // if no match was found -> space
             {
                 continue;
             } else {
-                result += it.value() + ' '; // add letter to string
+                result += it.value() + " "; // add letter to string
             }
         }
     }
@@ -113,7 +115,7 @@ QString Morse::morseToEng(QString str)
         it = toEnglish.find(words[i]);
         if (it == toEnglish.end()) // if no match was found -> space
         {
-            result += ' ';
+            result += " ";
 
         } else {
             result += it.value(); // add letter to string
